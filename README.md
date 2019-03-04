@@ -8,9 +8,24 @@ composer require mach3builders/vuetrans
 
 ## Usage
 
+After requiring the package, publish the assets.
+
 ``` php
-// Usage description here
+php artisan vendor:publish --tag=assets
 ```
+After Publishing the assets add the following script tag to your head
+
+``` html
+<script src="{{ route('mach3builders.vuetrans') }}"></script>
+```
+
+After adding the script tag, import the vue plugin inside your app.js
+
+``` js
+import Trans from './vendor/vuetrans/trans';
+Vue.use(Trans);
+```
+
 
 ### Testing
 
